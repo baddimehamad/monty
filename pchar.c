@@ -2,30 +2,30 @@
 /**
  * f_pchar - prints the char at the top of the stack,
  * followed by a new line
- * @head: stack head
- * @counter: line_number
- * Return: no return
+ * @a_head: stack head
+ * @the_counter: line_number
+ * Return: null return
 */
-void f_pchar(stack_t **head, unsigned int counter)
+void f_pchar(stack_t **head, unsigned int the_counter)
 {
-	stack_t *h;
+	stack_t *the_head;
 
-	h = *head;
-	if (!h)
+	the_head = *head;
+	if (!the_head)
 	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", the_counter);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	if (h->n > 127 || h->n < 0)
+	if (the_head->n > 127 || the_head->n < 0)
 	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", the_counter);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", h->n);
+	printf("%c\n", the_head->n);
 }

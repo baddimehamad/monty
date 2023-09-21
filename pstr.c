@@ -2,24 +2,24 @@
 /**
  * f_pstr - prints the string starting at the top of the stack,
  * followed by a new
- * @head: stack head
- * @counter: line_number
- * Return: no return
+ * @a_head: stack head
+ * @the_counter: line_number
+ * Return: null return
 */
-void f_pstr(stack_t **head, unsigned int counter)
+void f_pstr(stack_t **a_head, unsigned int the_counter)
 {
-	stack_t *h;
-	(void)counter;
+	stack_t *the_head;
+	(void)the_counter;
 
-	h = *head;
-	while (h)
+	the_head = *a_head;
+	while (the_head)
 	{
-		if (h->n > 127 || h->n <= 0)
+		if (the_head->n > 127 || the_head->n <= 0)
 		{
 			break;
 		}
-		printf("%c", h->n);
-		h = h->next;
+		printf("%c", the_head->n);
+		the_head = the_head->next;
 	}
 	printf("\n");
 }
